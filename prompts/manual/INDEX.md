@@ -1,12 +1,14 @@
 # 人工复制提示词总目录
 
-使用方式：先复制目标文件中的“任务提示词”到 Agent；Agent 完成后按仓库评分协议提交结果和证据。提示词是人工执行资产，不要求 CI 对自然语言正文做校验。
+使用方式：先复制目标文件中的完整任务提示词到 Agent；Agent 完成后按仓库评分协议提交结果和证据。提示词是人工执行资产，不要求 CI 对自然语言正文做校验。
 
-## 已完整整理的首批提示词
+统一写作标准：[PROMPT_AUTHORING_STANDARD.md](./PROMPT_AUTHORING_STANDARD.md)。S01 已按该标准改写为长提示词样板。
+
+## 已整理的首批提示词
 
 | 编号 | 主题 | 文件 |
 |---|---|---|
-| S01 | 蚂蚁军团智能寻路 | [ant-pathfinding.md](./ant-pathfinding.md) |
+| S01 | 蚂蚁军团智能寻路 | [ant-pathfinding.md](./ant-pathfinding.md)（长提示词样板） |
 | R01 | 六足机器人倒水 | [hexapod-water-transfer.md](./hexapod-water-transfer.md) |
 | R01-A~F | 六足机器人分级拆解 | [hexapod-levels.md](./hexapod-levels.md) |
 | R02 | 机械臂抓取/绘画/倒水 | [robotic-arm.md](./robotic-arm.md) |
@@ -19,7 +21,7 @@
 
 ## 规划中的完整挑战矩阵
 
-V0.1 先保留 12 类 × 5 个挑战的目录位，逐项补充完整提示词和可执行测试：
+V0.1 先保留 12 类 × 5 个挑战的目录位，逐项补充同等粒度的完整提示词和可执行测试：
 
 - swarm：群体智能与蜂群
 - robotics：机器人与运动规划
