@@ -17,7 +17,7 @@
 - `protocol/EXECUTION_AND_SCORING.md`：执行、证据、复现与抗作弊协议。
 - `challenges/`：首批代表性挑战。
 - `tests/skeleton/`：公共测试骨架约定与示例。
-- `scoring/score.py`：确定性评分器；证据不足输出 `UNSCORED`。\n- `schema/result.schema.json`：机器可读结果 Schema。\n- `tests/skeleton/`：公共结果样例与可执行评分测试。\n- `.github/workflows/validate.yml`：公共 CI 校验。
+- `scoring/score.py`：确定性评分器；证据不足输出 `UNSCORED`。\n- `schema/result.schema.json`：机器可读结果 Schema。\n- `tests/skeleton/`：公共结果样例与可执行评分测试。\n- `prompts/manual/`：人工复制到 Agent 的完整提示词。\n- `prompts/automated/`：后续自动化 Runner 约定。\n- `.github/workflows/validate.yml`：机器文件和评分器校验。
 
 ## 状态
 
