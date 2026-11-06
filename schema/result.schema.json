@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pwl1987/ai-agent-challenge-bench/schema/result.schema.json",
+  "title": "V0.1 Evaluation Result",
+  "type": "object",
+  "required": ["status", "challenge_id", "challenge_version", "commit_sha", "score", "reasons", "metrics"],
+  "properties": {
+    "status": {"type": "string", "enum": ["PASS", "FAIL", "UNSCORED"]},
+    "challenge_id": {"type": "string", "minLength": 3},
+    "challenge_version": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "commit_sha": {"type": ["string", "null"]},
+    "score": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+    "reasons": {"type": "array", "items": {"type": "string"}},
+    "metrics": {"type": "object", "required": ["wall_seconds"], "properties": {"wall_seconds": {"type": "number", "minimum": 0}, "memory_mb": {"type": "number", "minimum": 0}}, "additionalProperties": true},
+    "dimensions": {"type": ["object", "null"], "properties": {"functional": {"type": "number"}, "algorithm": {"type": "number"}, "interaction": {"type": "number"}, "engineering": {"type": "number"}}, "additionalProperties": false}
+  },
+  "additionalProperties": false
+}
