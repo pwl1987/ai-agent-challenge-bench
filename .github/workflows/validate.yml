@@ -15,3 +15,5 @@ jobs:
           python-version: '3.11'
       - name: Validate JSON and repository structure
         run: python scripts/validate_repository.py
+      - name: Run executable scoring skeleton
+        run: python tests/skeleton/test_score.py
