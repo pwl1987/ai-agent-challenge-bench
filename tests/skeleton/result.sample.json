@@ -1,0 +1,1 @@
+{"status":"PASS","challenge_id":"sample","challenge_version":"v0.1.0","commit_sha":"0123456789abcdef0123456789abcdef01234567","score":null,"reasons":[],"metrics":{"wall_seconds":0.25},"dimensions":{"functional":40,"algorithm":25,"interaction":15,"engineering":20}}
