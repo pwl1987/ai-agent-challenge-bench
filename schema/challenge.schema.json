@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pwl1987/ai-agent-challenge-bench/schema/challenge.schema.json",
+  "title": "AI Agent Challenge V0.1",
+  "type": "object",
+  "required": ["id", "version", "title", "category", "agent_instruction", "runtime", "gates", "scoring", "evidence"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "version": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "category": {"type": "string", "enum": ["algorithm", "simulation-3d", "interaction", "engineering"]},
+    "agent_instruction": {"type": "string", "minLength": 100},
+    "runtime": {"type": "object", "required": ["language", "entrypoint", "command"], "properties": {"language": {"type": "string"}, "entrypoint": {"type": "string"}, "command": {"type": "string"}, "network": {"type": "string", "enum": ["disabled", "allowlist"]}}, "additionalProperties": false},
+    "gates": {"type": "array", "minItems": 3, "items": {"type": "object", "required": ["id", "kind", "assertion"], "properties": {"id": {"type": "string"}, "kind": {"type": "string", "enum": ["safety", "build", "functional", "evidence"]}, "assertion": {"type": "string", "minLength": 10}}, "additionalProperties": false}},
+    "scoring": {"type": "object", "required": ["functional", "algorithm", "interaction", "engineering"], "properties": {"functional": {"type": "number", "const": 40}, "algorithm": {"type": "number", "const": 25}, "interaction": {"type": "number", "const": 15}, "engineering": {"type": "number", "const": 20}}, "additionalProperties": false},
+    "evidence": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 3}},
+    "limits": {"type": "object", "properties": {"wall_seconds": {"type": "integer", "minimum": 1}, "memory_mb": {"type": "integer", "minimum": 64}}, "additionalProperties": false}
+  },
+  "additionalProperties": false
+}
